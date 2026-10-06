@@ -1,0 +1,6 @@
+ID Command line                         Date and time       Action(s) Altered
+ 5 dnf remove -y tcpdump                2026-10-06 13:46:32                 1
+ 4 dnf install -y nginx libcap-ng-utils 2026-10-06 13:45:13                 9
+ 3 dnf upgrade -y                       2026-10-06 13:41:20               834
+ 2 yum install nano                     2026-09-11 18:46:36                 1
+ 1                                      2026-09-11 17:34:21               790

@@ -1,0 +1,252 @@
+    1  sudo shutdown now
+    2  su user1
+    3  id user1
+    4  sudo chage -l user1
+    5  sudo find / -perm 4000 -type f 2>/dev/null > ~/setuid_files.out
+    6  ls -la
+    7  cat ~/setuid_files.out 
+    8  sudo dnf install openssh-server
+    9  sudo systemctl enable --now sshd
+   10  sudo systemctl status sshd
+   11  sudo shutdown now
+   12  ipo a
+   13  ip a
+   14  systemctl sshd 
+   15  systemctl status sshd 
+   16  clear
+   17  ip -a
+   18  ip a
+   19  sudo su
+   20  whoiami
+   21  whoami
+   22  id user1
+   23  sudo chage -l user1
+   24  sudo passwd user1
+   25  sudo chage -M 90 user1
+   26  sudo chage -l user1
+   27  sudo find / -perm -4000 -type f 2>/dev/null > ~/setuid_files.out
+   28  ls -la
+   29  cat setuid_files.out 
+   30  cat proc-monitoring.out 
+   31  ps -eo ruid,euid,pid,cmd | awk '$2==0 && $1>=1000 {print}' > ~/proc-monitoring.out 
+   32  cat ~/priv_processes.out
+   33  cat ~/proc-monitoring.out 
+   34  ls -la
+   35  cd caps-demo/
+   36  ls -la
+   37  cd ../setuid-demoversion/
+   38  ls -la
+   39  cd ../
+   40  rm -rf caps-demo/
+   41  rm -rf setuid-demoversion/
+   42  sudo cp /usr/bin/cat /home/user1/try_own_cat
+   43  sudo chmod u+s /home/user1/try_own_cat
+   44  ls -l /home/user1/try_own_cat
+   45  sudo ls -l /home/user1/try_own_cat
+   46  cd /tmp
+   47  ls -la
+   48  cd ../
+   49  cd ~
+   50  sudo touch /tmp/rootfile
+   51  ls -l /tmp/rootfile
+   52  sudo cp /usr/bin/chown /home/user1/my_try_own
+   53  sudo setcap cap_chown+ep /home/user1/my_try_own
+   54  getcap /home/user1/my_try_own
+   55  sudo getcap /home/user1/my_try_own
+   56  sudo sh -c 'echo "user1 ALL=(ALL) /usr/bin/date, /usr/bin/timedatectl" >> /etc/sudoers'
+   57  cat /etc/sudoers
+   58  sudo cat /etc/sudoers
+   59  sudo visudo -c
+   60  sudo cat /etc/sudoers.d/allow-time
+   61  sudo chmod 0440 /etc/sudoers.d/allow-time
+   62  sudo visudo -c
+   63  sudo timedatectl set-ntp false
+   64  echo "372761"
+   65  history > ~/history.out 
+   66  ls -la
+   67  stat /home/user1 > ~/stat.out
+   68  stat /home/user1/my_try_own >> ~/stat.out 
+   69  sudo stat /home/user1/my_try_own >> ~/stat.out 
+   70  cat stat.out 
+   71  sudo stat /home/user1/try_own_cat >> ~/stat.out 
+   72  cat stat.out 
+   73  getcap /home/user1/mychown > ~/getcap.out
+   74  sudo getcap /home/user1/mychown > ~/getcap.out
+   75  sudo getcap /home/user1/my_try_own > ~/getcap.out
+   76  cat getcap.out 
+   77  ls -la
+   78  pwd proc-monitoring.out]
+   79  ls -la
+   80  mkdir fold
+   81  cp stat.out fold/
+   82  cp proc-monitoring.out fold/
+   83  cp setuid_files.out fold/
+   84  cp suid-files.out fold/
+   85  cp getcap.out fold/
+   86  cp history.out fold/
+   87  cp  /home/user1/history_user1.out fold/
+   88  sudo cp  /home/user1/history_user1.out fold/
+   89  ls -l fold/
+   90  rmn -rf suid-files.out 
+   91  rm -rf fold/suid-files.out 
+   92  ls -la
+   93  cd fold
+   94  ls -la
+   95  sudo cp /etc/passwd .
+   96  ls -la
+   97  sudo cp /etc/shadow .
+   98  sudo cp /etc/group .
+   99  sudo cp /etc/sudoers .
+  100  ls -la
+  101  sudo cp /home/user1/my_try_own .
+  102  ls -la
+  103  sudo cp /home/user1/try_own_cat .
+  104  sudo su
+  105  whoami
+  106  lsblk
+  107  exit
+  108  lsblk
+  109  sudo poweroff
+  110  lsblk
+  111  sudo mkfs.ext4 -L MEPHI_WEB /dev/vdb 
+  112  sudo blkid /dev/vdb
+  113  sudo mkdir -p /mephi-web
+  114  sudo nano /etc/fstab
+  115  sudo mount LABEL=MEPHI_WEB /mephi-web
+  116  sudo systemctl daemon-reload
+  117  sudo mount LABEL=MEPHI_WEB /mephi-web
+  118  df -h | grep mephi-web
+  119  mount | grep mephi-web
+  120  lsblk
+  121  cd /mephi-web
+  122  ls -la
+  123  sudo touch /mephi-web/test.txt
+  124  cd ~
+  125  sudo touch /mephi-web/test.txt
+  126  ls -l /mephi-web/
+  127  sudo umount /mephi-web
+  128  sudo mount -a
+  129  df -h | grep mephi-web
+  130  history
+  131  systemctl enable --now nginx
+  132  systemctl status nginx --no-pager
+  133  systemctl is-enabled nginx 
+  134  ss -tlnp | grep :80
+  135  journalctl -u nginx -b | head -20
+  136  firewall-cmd --permanent --add-service=http
+  137  sudo firewall-cmd --permanent --add-service=http
+  138  firewall-cmd --reload
+  139  sudo firewall-cmd --reload
+  140  journalctl -u nginx -b | head -20
+  141  sudo journalctl -u nginx -b > journalctl.out
+  142  cat journalctl.out 
+  143  pwd
+  144  sudo dnf install -y acl  
+  145  groupadd -g 5500 mephi-dev
+  146  sudo groupadd -g 5500 mephi-dev
+  147  sudo groupadd -g 4444 curators
+  148  sudo useradd -m -u 5501 -G mephi-dev user1
+  149  sudo useradd -m -u 5502 -G mephi-dev user2
+  150  sudo useradd -m -u 5503 -G mephi-dev user3
+  151  sudo useradd -M -u 4445 -G curators curator1
+  152  sudo useradd -M -u 4446 -G curators curator2
+  153  sudo userdel user1
+  154  useradd -m -u 5501 -G mephi-dev user1
+  155  sudo useradd -m -u 5501 -G mephi-dev user1
+  156  sudo userdel -r user1
+  157  id user1
+  158  grep user1 /etc/passwd
+  159  ls -ln /home/user1
+  160  sudo ls -ln /home/user1
+  161  sudo rm -rf /home/user1
+  162  sudo rm -f /var/spool/mail/user1
+  163  sudo find / -user 1001 2>/dev/null
+  164  useradd -m -u 5501 -G mephi-dev user1
+  165  sudo useradd -m -u 5501 -G mephi-dev user1
+  166  id user1; id curator1
+  167  mkdir -p /data/mephi-2026
+  168  sudo mkdir -p /data/mephi-2026
+  169  sudo chown root:mephi-dev /data/mephi-2026
+  170  chmod 2770 /data/mephi-2026
+  171  sudo chmod 2770 /data/mephi-2026
+  172  sudo setfacl -m g:curators:rx /data/mephi-2026
+  173  sudo setfacl -d -m u::rwx,g::rwx,g:curators:r,m::rwx,o::--- /data/mephi-2026
+  174  sudo getfacl /data/mephi-2026
+  175  stat /data/mephi-2026
+  176  sudo -u user1  sh -c 'echo 1 > /data/mephi-2026/a.txt'
+  177  sudo -u user2  sh -c 'cat /data/mephi-2026/a.txt; echo 2 >> /data/mephi-2026/a.txt'
+  178  sudo -u curator1 cat /data/mephi-2026/a.txt
+  179  sudo -u curator2 sh -c 'echo x >> /data/mephi-2026/a.txt' 
+  180  sudo -u nobody  cat /data/mephi-2026/a.txt
+  181  rm -f /data/mephi-2026/a.txt
+  182  sudo rm -f /data/mephi-2026/a.txt
+  183  ls -l /usr/sbin/tcpdump
+  184  chmod u-s /usr/sbin/tcpdump 
+  185  sudo chmod u-s /usr/sbin/tcpdump 
+  186  sudo setcap cap_net_admin,cap_net_raw=+ep /usr/sbin/tcpdump
+  187  sudo getcap /usr/sbin/tcpdump 
+  188  sudo -u user1 tcpdump -c 5  
+  189  sudo getenforce
+  190  sudo -u user1 tcpdump 
+  191  sed -i.bak 's|root /usr/share/nginx/html;|root /mephi-web;|' /etc/nginx/nginx.conf
+  192  sudo sed -i.bak 's|root /usr/share/nginx/html;|root /mephi-web;|' /etc/nginx/nginx.conf
+  193  nginx -t && systemctl reload nginx
+  194  sudo nginx -t && systemctl reload nginx
+  195  sudo dnf install -y policycoreutils-python-utils
+  196  sudo semanage fcontext -a -t httpd_sys_content_t "/mephi-web(/.*)?"
+  197  sudo restorecon -Rv /mephi-web
+  198  ls -Zd /mephi-web       
+  199  history
+  200  usermod -s /sbin/nologin curator1
+  201  sudo usermod -s /sbin/nologin curator1
+  202  sudo usermod -s /sbin/nologin curator2
+  203  su - curator1  
+  204  sudo sed -i 's/^PASS_MAX_DAYS.*/PASS_MAX_DAYS\t90/' /etc/login.defs
+  205  grep PASS_MAX_DAYS /etc/login.defs
+  206  chage -M 90 root user1 user2 user3 curator1 curator2
+  207  for u in root user1 user2 user3 curator1 curator2; do sudo chage -M 90 $u; done
+  208  chage -l user1      
+  209  sudo chage -l user1      
+  210  sudo echo 'minlen = 12' >> /etc/security/pwquality.conf
+  211  sudo echo 'minlen = 12' >> sudo /etc/security/pwquality.conf
+  212  grep minlen /etc/security/pwquality.conf
+  213  echo 'minlen = 12' >> sudo /etc/security/pwquality.conf
+  214  grep minlen /etc/security/pwquality.conf
+  215  nano /etc/security/pwquality.conf
+  216  sudo nano /etc/security/pwquality.conf
+  217  grep minlen /etc/security/pwquality.conf
+  218  passwd user1; passwd user2; passwd user3; passwd
+  219  su 
+  220  sudo su
+  221  sudo sudo nano /etc/security/pwquality.conf
+  222  sudo nano /etc/security/pwquality.conf
+  223  sudo nano /etc/pam.d/system-auth
+  224  sudo nano /etc/pam.d/password-auth
+  225  grep -E '^[^#]*minlen' /etc/security/pwquality.conf
+  226  passwd user
+  227  export STUDENT=372761
+  228  echo "Hello from Student: $STUDENT" > /mephi-web/index.html
+  229  sudo echo "Hello from Student: $STUDENT" > /mephi-web/index.html
+  230  cd /mephi-web/
+  231  ls -la
+  232  echo $STUDENT
+  233  echo "Hello from Student: $STUDENT" > /mephi-web/index.html
+  234  sudo chown user:user /mephi-web
+  235  echo "Hello from Student: $STUDENT" > /mephi-web/index.html
+  236  ls -Z /mephi-web/index.html
+  237  ls -Zd /mephi-web
+  238  sudo -u nginx cat /mephi-web/index.html
+  239  echo "Hello from Student: 12345" > /mephi-web/index.html
+  240  echo "Hello from Student: $STUDENT" > /mephi-web/index.html
+  241  cat /mephi-web/index.html
+  242  sudo restorecon -Rv /mephi-web
+  243  ls -l /mephi-web/index.html
+  244  curl http://localhost/
+  245  sudo nginx -T | grep -E 'root|server_name|listen'
+  246  sudo nano /etc/nginx/nginx.conf
+  247  sudo nginx -t
+  248  sudo sudo nginx -t
+  249  sudo nginx -t
+  250  sudo systemctl restart nginx
+  251  curl http://localhost/
+  252  history > ~/task2_history.out 

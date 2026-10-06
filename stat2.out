@@ -1,0 +1,9 @@
+  File: /data/mephi-2026
+  Size: 6         	Blocks: 0          IO Block: 4096   directory
+Device: 252,0	Inode: 3450        Links: 2
+Access: (2770/drwxrws---)  Uid: (    0/    root)   Gid: ( 5500/mephi-dev)
+Context: unconfined_u:object_r:default_t:s0
+Access: 2026-10-06 17:37:49.207296609 +0300
+Modify: 2026-10-06 17:38:43.742296635 +0300
+Change: 2026-10-06 17:38:43.742296635 +0300
+ Birth: 2026-10-06 17:37:49.207296609 +0300
